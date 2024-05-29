@@ -10,6 +10,10 @@
     --very-dark-blue: hsl(234, 12%, 34%);
     --grayish-blue: hsl(229, 6%, 66%);
     --very-light-gray: hsl(0, 0%, 98%);
+    /*dimensions*/
+    --card-width: 330px;
+    --card-height: 250px;
+    --card-x-pad: 30px;
 }
 
 html {
@@ -26,10 +30,8 @@ body {
 }
 
 main {
-    --main-y-margin: 50px;
     margin: 20px;
-    margin-top: var(--main-y-margin);
-    margin-bottom: var(--main-y-margin);
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -43,13 +45,17 @@ span, p {
 }
 
 h1, main>p {
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
 }
 
 span {
     margin-bottom: 10px;
     font-weight: 200;
+}
+
+main > p {
+    margin-top: 30px;
 }
 
 .cards {
@@ -66,11 +72,14 @@ span {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 15px;
-    border-top: 5px solid black;
+    border-top: 3px solid black;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 15px;
-    height: 270px;
-    width: 330px;
+    padding: 20px;
+    padding-left: var(--card-x-pad);
+    padding-right: var(--card-x-pad);
+    font-size: 13px;
+    height: var(--card-height);
+    width: var(--card-width);
     text-align: left;
 }
 
@@ -95,15 +104,15 @@ span {
     display: block;
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 720px) {
     .cards {
-        height: 600px;
+        height: calc(var(--card-height) * 2.5);
     }
 }
 
-@media all and (min-width: 1030px) {
+@media all and (min-width: 1050px) {
     .card:first-child, .card:last-child {
-        margin-top: 145px;
-        margin-bottom: 145px;
+        margin-top: calc(var(--card-height) / 2);
+        margin-bottom: calc(var(--card-height) / 2);
     }
 }
